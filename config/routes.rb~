@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :devices
   devise_for :users
-  root 'devices#index'
+
   resources :users do
     resources :devices, :shallow => true
   end
