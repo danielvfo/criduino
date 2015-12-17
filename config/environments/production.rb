@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   # enable mailer so Devise can send email
-  config.action_mailer.default_url_options = { :host => 'http://ec2-54-69-30-218.us-west-2.compute.amazonaws.com/ratings' }
+  config.action_mailer.default_url_options = { :host => 'http://107.170.218.128/criduino' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
