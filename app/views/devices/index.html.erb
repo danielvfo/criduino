@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" xmlns:border-left="http://www.w3.org/1999/xhtml"><%= notice %></p>
 
 <h1>Listing Devices</h1>
 
@@ -7,23 +7,23 @@
     <tr>
       <th>Mac</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @devices.each do |device| %>
       <tr>
-        <td><%= device.mac %></td>
-        <td><%= device.status %></td>
-        <td><%= link_to 'Show', device %></td>
-        <td><%= link_to 'Edit', edit_device_path(device) %></td>
-        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="font-size: 30px"><%= device.mac %></td>
+        <td style="font-size: 30px"><%= device.status %></td>
+        <td><%= link_to 'Show', device, class: "btn btn-default navbar-btn" %>
+        <%= link_to 'Edit', edit_device_path(device), class: "btn btn-default navbar-btn" %>
+        <%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %>
+        <%= link_to 'Turn On', {:action => 'turn_on', :controller => 'devices'}, class: "btn btn-success navbar-btn" %>
+        <%= link_to 'Turn Off', {:action => 'turn_off', :controller => 'devices'}, class: "btn btn-warning navbar-btn" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Device', new_device_path %>
+<br/>
+<%= link_to '+', new_device_path, class: "round-button" %>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :devices, :shallow => true
   end
+  get '/devices#turn_on', to: 'devices#turn_on'
+  get '/devices#turn_off', to: 'devices#turn_off'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
