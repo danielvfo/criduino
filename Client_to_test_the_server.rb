@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'socket'      # Sockets are in standard library
 
-hostname = 'localhost'
+hostname = 'http://107.170.218.128/criduino'
 port = 5632           
 
 TCPSocket.open(hostname, port) do |socket|

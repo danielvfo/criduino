@@ -63,7 +63,7 @@ class DevicesController < ApplicationController
 
   def turn_on
     @devices = current_user.devices                   # Select all the devices that this user owns
-    TCPServer.open('localhost', 5632) do |server|     # Socket to listen on the port you want
+    TCPServer.open('http://107.170.218.128/criduino', 5632) do |server|     # Socket to listen on the port you want
       while client = server.accept                    # Wait for a client to connect
         @temp = client.gets                           # Reads the message from the client
         @macs = @devices.select{ |device| device.mac = @temp } # Select the mac address that in the database that matches with the one sent by the client
@@ -79,7 +79,7 @@ class DevicesController < ApplicationController
 
   def turn_off
     @devices = current_user.devices                   # Select all the devices that this user owns
-    TCPServer.open('localhost', 5632) do |server|     # Socket to listen on the port you want
+    TCPServer.open('http://107.170.218.128/criduino', 5632) do |server|     # Socket to listen on the port you want
       while client = server.accept                    # Wait for a client to connect
         @temp = client.gets                           # Reads the message from the client
         @macs = @devices.select{ |device| device.mac = @temp } # Select the mac address that in the database that matches with the one sent by the client
